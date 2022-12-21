@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+<h1>BEST ACADEMY</h1>
+ <style>
+ h2{
+ color:blue;
+ font-size:40px;
+ font-family:"times"}
+ h1{color:black;
+ 
+ text-align:center;
+ font-size:60px;
+ font-family:"times"
+ }
+
+body{background-image: url("https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2Nob29sJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&w=1000&q=80");
+}
+ </style>
+</head>
+
+
+
+<body>
+ 
+
+<div>
+<button style="background: darkcyan;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;"><a style="color: white" th:href="@{/Student}">Student</a></button>
+<button style="background: darkcyan;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;"><a style="color: white" th:href="@{/Course}">Course</a></button>
+  <br><br><br>
+<b><h2 >COURSE CREATION</h2></b>
+<tr>
+<div  align = "left" >
+<h3><button style="background: SlateGrey;
+  border: none;
+  
+  
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;"><a style="color: white" th:href="@{/Course/addcourse}">ADD NEW</a>   </button>
+</div>
+</tr>
+</div>
+<div class="col-sm-8" align = "center">
+        <div class="panel-body" align = "center" >
+                
+                
+   <table class="table" align:"center">
+<thead align:"center" class="thead-dark">
+        <tr>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Duration</th>
+             <th>edit</th>
+             <th>delete</th>
+   </tr>
+  </thead>
+  <tbody>
+      <tr  th:each="course : ${listcourse}">
+<td th:text="${course.id}">Course ID</td>
+<td th:text="${course.coursename}">Course Name</td>
+<td th:text="${course.duration}">Duration</td>
+ 
+<td>
+<a th:href="@{'/Course/edit/'+ ${course.id}}">Edit</a>
+</td>     
+<td>
+<a th:href="@{'/Course/delete/' + ${course.id}}">Delete</a>
+</td>     
+</tr>
+  </tbody>
+  </table>                
+</div>
+</div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+ <head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+ 
+</head>
+<body>
+<div>
+<h2 >Course Creation</h2>
+<tr>
+<div align = "left" >
+<h3><a  th:href="@{/Course/addcourse}">Add new</a>   
+</div>
+</tr>
+</div>
+ 
+<div class="col-sm-8" align = "center">
+        <div class="panel-body" align = "center" >
+                
+                
+   <table class="table">
+<thead class="thead-dark">
+        <tr>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Duration</th>
+             <th>edit</th>
+             <th>delete</th>
+   </tr>
+  </thead>
+  <tbody>
+      <tr  th:each="course : ${listcourse}">
+<td th:text="${course.id}">Course ID</td>
+<td th:text="${course.coursename}">Course Name</td>
+<td th:text="${course.duration}">Duration</td>
+ 
+<td>
+<a th:href="@{/Course/edit/ + ${course.id}}">Edit</a>
+</td>     
+<td>
+<a th:href="@{/Course/delete/ + ${course.id}}">Delete</a>
+</td>     
+</tr>
+  </tbody>
+  </table>                
+</div>
+</div>
+
+</body>
+</html>-->

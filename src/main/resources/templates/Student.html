@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+ 
+<body>
+<style>
+h2{
+text-align:center;
+font-size:30px;
+font-family:times}
+ body{
+text-align:center;
+color:daekblue;
+background:wheat;
+background-image:url("https://previews.123rf.com/images/motizova/motizova1608/motizova160800266/61508802-open-book-hardback-books-on-wooden-table-education-background-back-to-school-copy-space-for-text.jpg");</style>
+
+<b><h2>STUDENT REGISTRATION</h2></b><br>
+<hr>
+  <div align = "left" >
+  <button  style="background: SlateGrey;
+  border: none;
+  
+  padding: 5px 5spx;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;"><h3><b><a style="color:white" th:href="@{/Student/addstudent}">ADD NEW</a></b></h3>    </button>
+ 
+  </div>
+  <br>
+ <br>
+    <div class="col-sm-8" align = "center">
+    <div class="panel-body" align = "center" >
+          
+  <table class="table">
+  <thead class="thead-dark">
+    <tr>
+           <th>Student ID</th>
+           <th>Student Name</th>
+            <th>Course Name</th>
+             <th>edit</th>
+             <th>delete</th>
+   </tr>
+  </thead>
+ 
+  <tbody>
+      <tr  th:each="student : ${liststudent}">
+<td th:text="${student.id}">Student ID</td>
+<td th:text="${student.stname}">Student Name</td>
+<td th:text="${student.coursename}">Course</td>
+<td>
+<a th:href="@{'/Student/edit/' + ${student.id}}">Edit</a>
+</td>     
+<td>
+<a th:href="@{'/Student/delete/' + ${student.id}}">Delete</a>
+</td>     
+     </tr>
+  </tbody>
+</table>
+                  
+</div>
+</div>
+
+
+</body>
+</html>
+
+
+<!--
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<body>
+<div th:insert="fragment/header :: header "></div>
+<h2 >Student Registration</h2>
+<tr>
+<div align = "left" >
+<a  th:href="@{/Student/addstudent}">Add new</a>   
+</div>
+</tr>
+</div>
+<div class="col-sm-8" align = "center">
+        <div class="panel-body" align = "center" >
+                
+                
+   <table class="table">
+<thead class="thead-dark">
+        <tr>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Duration</th>
+             <th>edit</th>
+             <th>delete</th>
+   </tr>
+  </thead>
+  <tbody>
+      <tr  th:each="course : ${listcourse}">
+<td th:text="${course.id}">Course ID</td>
+<td th:text="${course.coursename}">Course Name</td>
+<td th:text="${course.duration}">Duration</td>
+ 
+<td>
+<a th:href="@{/Course/edit/ + ${course.id}}">Edit</a>
+</td>     
+<td>
+<a th:href="@{/Course/delete/ + ${course.id}}">Delete</a>
+</td>     
+</tr>
+  </tbody> -->

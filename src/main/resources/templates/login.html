@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+</head>
+<body>
+    
+    
+    <style type="text/css">
+    
+    
+   
+    
+    
+    
+    body{
+    background-image:url("https://t4.ftcdn.net/jpg/02/00/90/53/360_F_200905394_2u1hKNTSawkcR6N1X0aX0PiSBR1tvUMn.jpg");}
+</style>
+ 
+    </head>
+    <body>
+        <div class="container">
+            <table  align="center">
+            <tr>
+                <td align="center" valign="middle">
+                <table class="table-bordered" width="800" border="0" cellpadding="3"cellspacing="3" bgcolor="wheat">
+        
+        <form action="#" th:action="@{/login}" th:object="${user}" method="post">
+  
+          
+                  <tr>
+                                    <td height="400" colspan="2" align="left" valign="middle" bgcolor="AliceBlue" class="style2">
+                                        <div align="center">
+                                            <strong style="color:blue"> LOGIN</strong><br><br>
+                                          <button style="background: darkcyan;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;">  <a style="color: white" th:href="@{/admin}">ADMIN LOGIN</a><br></button><br>
+                                           <br> <button style="background: darkcyan;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;">  <a style="color: white" th:href="@{/student_login}">STUDENT LOGIN</a><br></button>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+ 
+            
+        
+    </form>
+       </table>  
+         </td>  
+         </tr>  
+      </table>
+     </div>  
+ 
+</body>
+</html>

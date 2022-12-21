@@ -1,0 +1,74 @@
+  
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Student</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<style>
+body{background-image: url("https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2Nob29sJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&w=1000&q=80");
+}
+
+
+</style>
+<body>
+ <div align="center"> 
+<b> <h1 style="font-family:times">NEW STUDENT REGISTRATION</h1></b>
+ <br/>
+
+<div class="col-sm-4">                    
+<form action="#" th:action="@{/Student/save}" th:object="${student}"method="post">
+
+<div align="Left">
+<tr>
+<label class="form-label">Student Name</label>
+<td>
+<input type="hidden" th:field="*{id}"/>
+<input type="text" th:field="*{stname}" class="form-control" placeholder="Student Name"/>
+</td>
+</tr>
+</div>
+<div align="left" >
+  <tr>
+<label class="form-label">Course</label>
+<td>
+<select name="course" id="course" class="form-control">
+    <option th:each ="course : ${listcourse}"
+        th:value ="${course.id}"
+        th:text ="${course.coursename}">
+</option>
+</select>
+</td>
+</tr>
+</div>
+
+<div align="Left">
+<tr>
+<label class="form-label">fee</label>
+<td>
+<input type="text" th:field="*{fee}" class="form-control" placeholder="fee"/>
+</td>
+</tr>
+</div>
+<br>
+<tr>
+
+<td colspan="2"><button type="submit" class="btn btn-info">Save</button></td>
+</tr>
+</form>
+</div>
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
